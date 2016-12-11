@@ -29,7 +29,7 @@ var routes = (Book) => {
 
     });
 
-  bookRouter.route('/books/:bookId')
+  bookRouter.route('/:bookId')
     .get((req, res) => {
 
       Book.findById(req.params.bookId, (err, book) => {
