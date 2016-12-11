@@ -12,13 +12,20 @@ var bookRouter = express.Router();
 
 bookRouter.route('/books')
   .get((req, res) => {
-    Book.find((err, books) => {
+
+    var query = {};
+    if(req.query.genre) {
+      query.genre = req.query.genre;
+    }
+
+    Book.find(query, (err, books) => {
       if(err){
         res.status(500).send(err);
       } else {
         res.json(books);
       }
     });
+
   });
 
 app.use('/api', bookRouter);
