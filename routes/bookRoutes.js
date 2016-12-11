@@ -74,6 +74,15 @@ var routes = (Book) => {
           res.json(req.book);
         }
       });
+    })
+    .delete((req, res) => {
+      req.book.remove((err) => {
+        if(err) {
+          res.status(500).send(err);
+        } else {
+          res.status(204).send('Removed');
+        }
+      });
     });
 
   return bookRouter;
