@@ -24,7 +24,11 @@ var routes = (Book) => {
 
   bookRouter.route('/:bookId')
     .get((req, res) => {
-        res.json(req.book);
+      var returnBook = req.book.toJSON();
+      returnBook.links = {};
+      var genreLink = 'http://' + req.headers.host + '/api/books/?genre=' + returnBook.genre;
+      returnBook.links.filterByThisGenere = genreLink.replace(' ', '%20');
+      res.json(returnBook);
     })
     .put((req, res) => {
       req.book.title = req.body.title;
