@@ -1,6 +1,6 @@
 {
   "name": "express-api-example",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/DangelZM/express-api-example/issues"
   },
-  "homepage": "https://github.com/DangelZM/express-api-example#readme"
+  "homepage": "https://github.com/DangelZM/express-api-example#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1"
+  }
 }
